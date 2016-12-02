@@ -4,11 +4,10 @@
         <meta charset="utf-8">
         <title>Johnson Han</title>
         <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/x65han/Golang-web/master/assets/favicon.ico"/>
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <script src="/fake/script.js" type="text/javascript"></script>
     </head>
-    <img src="https://raw.githubusercontent.com/x65han/Golang-web/master/assets/favicon.ico"/>
-    <body {{template "style.html"}}>
-        <h1>Below should have injected message:</h1>
-        <h3>{{template "message.html"}}</h3>
-        <h3>{{.title}}</h3>
+    <body {{template "bodyStyle.html"}}>
+        <h1>Below shoe injected message:</h1>
     </body>
 </html>

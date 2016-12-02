@@ -34,6 +34,7 @@ func main() {
 	router.POST ("/socket.io/", socketHandler)
 	router.Handle ("WS",  "/socket.io/", socketHandler)
 	router.Handle ("WSS", "/socket.io/", socketHandler)
+	router.Static("/fake/", "/assets/")
 
 	//Run Server
 	router.Run(":" + port)
