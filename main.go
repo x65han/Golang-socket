@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"os"
 	"fmt"
+	"time"
 	"github.com/gin-gonic/gin"
 	"github.com/googollee/go-socket.io"
 )
@@ -34,7 +35,7 @@ func main() {
 	router.POST ("/socket.io/", socketHandler)
 	router.Handle ("WS",  "/socket.io/", socketHandler)
 	router.Handle ("WSS", "/socket.io/", socketHandler)
-	router.Static("/fake/", "/assets/")
+	router.Static("/fake/", "./assets/")
 
 	//Run Server
 	router.Run(":" + port)
@@ -43,10 +44,15 @@ func main() {
 func socketHandler (c  *gin.Context) {
     Socketio_Server.On("connection", func(socket socketio.Socket) {
         fmt.Println("on connection")
-        socket.Join("chat")
+        socket.Join("galaxy")
+				socket.On("ping", func(msg string){
+						fmt.Println(msg, " pinging")
+						msg = time.Now().Format(time.RFC850)
+						socket.BroadcastTo("galaxy", "pong", msg)
+				})
         socket.On("chat message", func(msg string) {
             fmt.Println("emit:", socket.Emit("chat message", msg))
-            socket.BroadcastTo("chat", "chat message", msg)
+            socket.BroadcastTo("galaxy", "chat message", msg)
         })
         socket.On("disconnection", func() {
             fmt.Println("on disconnect")
