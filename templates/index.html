@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Johnson Han</title>
+        <link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/x65han/Golang-web/master/assets/favicon.ico"/>
+    </head>
+    <img src="https://raw.githubusercontent.com/x65han/Golang-web/master/assets/favicon.ico"/>
+    <body {{template "style.html"}}>
+        <h1>Below should have injected message:</h1>
+        <h3>{{template "message.html"}}</h3>
+        <h3>{{.title}}</h3>
+    </body>
+</html>
