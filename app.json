@@ -1,11 +1,10 @@
 {
-  "name": "Start on Heroku: Go",
-  "description": "Go Getting Started Example App",
+  "name": "UniPulse",
+  "description": "An Golang Server with Socket.io",
   "keywords": [
-    "getting-started",
+    "music",
     "go",
-    "sample",
-    "example"
+    "youtube iframe"
   ],
   "image": "heroku/go:1.6",
   "mount_dir": "src/github.com/heroku/go-getting-started",
