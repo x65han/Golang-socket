@@ -10,6 +10,7 @@ window.onload = function(){
 		}
 		// Establish TCP Connection
 		establishConnection();
+		$('#roomname').css("background-color", "crimson");
 }
 function establishConnection(){
 		// Connect to Socket.io
