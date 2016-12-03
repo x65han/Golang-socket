@@ -58,11 +58,9 @@ func socketHandler (c  *gin.Context) {
 				// Socket Receiver
 				socket.On("ping", func(msg string){
 						Socketio_Server.BroadcastTo(rooms[socket], "pong", msg)
+						fmt.Println(names[socket], " says ", msg, " in ", rooms[socket])
 				})
 				socket.On("status", func(msg string){
-						// res := "\nCurrent room: " + rooms[socket]
-						// res = res + "\n # of rooms: " + strconv.Itoa(len(rooms))
-						// res = res + "\n # of names: " + strconv.Itoa(len(names))
 						res := ""
 						res = res + "\n # of sockets: " + strconv.Itoa(len(sockets))
 						for _, x := range sockets{
@@ -78,7 +76,7 @@ func socketHandler (c  *gin.Context) {
 						socket.Leave(rooms[socket])
 						rooms[socket] = roomName
 						socket.Join(rooms[socket])
-						fmt.Println("connec to room: ", rooms[socket])
+						fmt.Println(names[socket], " joined ", rooms[socket])
 				})
 				socket.On("update username", func(username string){
 						names[socket] = username
