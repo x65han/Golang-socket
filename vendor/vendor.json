@@ -21,6 +21,54 @@
 			"revision": "4cc2de6207f4128624cbdd16be30f64966c67c08"
 		},
 		{
+			"checksumSHA1": "eGFWbGb+FzV8uudYumBaEwLUpiU=",
+			"path": "github.com/googollee/go-engine.io",
+			"revision": "ca9ced27e02c880970ee7726f9814f8a9c55d777",
+			"revisionTime": "2016-05-10T13:12:59Z"
+		},
+		{
+			"checksumSHA1": "Tv1/qmTmjl43MFulf61QbsGuu2c=",
+			"path": "github.com/googollee/go-engine.io/message",
+			"revision": "ca9ced27e02c880970ee7726f9814f8a9c55d777",
+			"revisionTime": "2016-05-10T13:12:59Z"
+		},
+		{
+			"checksumSHA1": "Z3Zs8QiMD9WQdAnRNqyrfuElIxg=",
+			"path": "github.com/googollee/go-engine.io/parser",
+			"revision": "ca9ced27e02c880970ee7726f9814f8a9c55d777",
+			"revisionTime": "2016-05-10T13:12:59Z"
+		},
+		{
+			"checksumSHA1": "Veyca3YORqrCpon9aIvt0CTB3JI=",
+			"path": "github.com/googollee/go-engine.io/polling",
+			"revision": "ca9ced27e02c880970ee7726f9814f8a9c55d777",
+			"revisionTime": "2016-05-10T13:12:59Z"
+		},
+		{
+			"checksumSHA1": "WSC+XDEXrzu11rf+gv1Y2N7v/nE=",
+			"path": "github.com/googollee/go-engine.io/transport",
+			"revision": "ca9ced27e02c880970ee7726f9814f8a9c55d777",
+			"revisionTime": "2016-05-10T13:12:59Z"
+		},
+		{
+			"checksumSHA1": "HKE4UBOwXdi/Qt48b0da4Z/ytSY=",
+			"path": "github.com/googollee/go-engine.io/websocket",
+			"revision": "ca9ced27e02c880970ee7726f9814f8a9c55d777",
+			"revisionTime": "2016-05-10T13:12:59Z"
+		},
+		{
+			"checksumSHA1": "FSHPd8vdTMV4rRzGftBdiPUPQbM=",
+			"path": "github.com/googollee/go-socket.io",
+			"revision": "e9f0a9b7a61267e1476f9f0a0429337813c39edd",
+			"revisionTime": "2016-08-11T13:18:22Z"
+		},
+		{
+			"checksumSHA1": "SmBqqqR0T+1Ksx5zwCl295Vey0s=",
+			"path": "github.com/gorilla/websocket",
+			"revision": "e8f0f8aaa98dfb6586cbdf2978d511e3199a960a",
+			"revisionTime": "2016-11-12T14:27:12Z"
+		},
+		{
 			"checksumSHA1": "ZUOd8OUOp+xdpB7p4w/O86Y8wyc=",
 			"path": "github.com/manucorporat/sse",
 			"revision": "c142f0f1baea5cef7f98a8a6c222f6134368c1f5"
@@ -47,5 +95,5 @@
 			"revision": "d627af88ac021317a280d320986282a6dc97549a"
 		}
 	],
-	"rootPath": "github.com/heroku/go-getting-started"
+	"rootPath": "Golang-socket"
 }
