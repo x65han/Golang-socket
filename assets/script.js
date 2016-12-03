@@ -35,3 +35,9 @@ function connectToRoom(){
 		document.getElementById("message-box").value = "";
 		console.log("Connect to: " + roomName);
 }
+function updateUsername(){
+		var username = document.getElementById("message-box").value.trim();
+		socket.emit("update username", username)
+		document.getElementById("message-box").value = "";
+		console.log("Update username: " + username);
+}

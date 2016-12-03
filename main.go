@@ -60,10 +60,18 @@ func socketHandler (c  *gin.Context) {
 						Socketio_Server.BroadcastTo(rooms[socket], "pong", msg)
 				})
 				socket.On("status", func(msg string){
-						res := "\nCurrent room: " + rooms[socket]
+						// res := "\nCurrent room: " + rooms[socket]
+						// res = res + "\n # of rooms: " + strconv.Itoa(len(rooms))
+						// res = res + "\n # of names: " + strconv.Itoa(len(names))
+						res := ""
 						res = res + "\n # of sockets: " + strconv.Itoa(len(sockets))
-						res = res + "\n # of rooms: " + strconv.Itoa(len(rooms))
-						res = res + "\n # of names: " + strconv.Itoa(len(names))
+						for _, x := range sockets{
+								if x == socket {
+										res = res + "\nYour info: <" + names[x] + "> is in <" + rooms[x] + ">"
+								}else {
+										res = res + "\n<" + names[x] + "> is in <" + rooms[x] + ">"
+								}
+						}
 						socket.Emit("pipe", res)
 				})
 				socket.On("connect to room", func(roomName string){
@@ -72,13 +80,17 @@ func socketHandler (c  *gin.Context) {
 						socket.Join(rooms[socket])
 						fmt.Println("connec to room: ", rooms[socket])
 				})
+				socket.On("update username", func(username string){
+						names[socket] = username
+						fmt.Println("Update user name: ", names[socket])
+				})
         socket.On("disconnection", func() {
 						fmt.Println(names[socket], " left ", rooms[socket])
 						socket.Leave(rooms[socket])
 						delete(rooms, socket)
 						delete(names, socket)
 						for index, x := range sockets{
-								if(x == socket){
+								if x == socket {
 										sockets = append(sockets[:index], sockets[index+1:]...)
 										break;
 								}
