@@ -60,6 +60,10 @@ func socketHandler (c  *gin.Context) {
 						Socketio_Server.BroadcastTo(rooms[socket], "pong", msg)
 						fmt.Println(names[socket], " says ", msg, " in ", rooms[socket])
 				})
+				socket.On("request to play", func(msg string){
+						Socketio_Server.BroadcastTo(rooms[socket], "play", msg)
+						fmt.Println(names[socket], " requested to play ", msg, " in ", rooms[socket])
+				})
 				socket.On("status", func(msg string){
 						res := ""
 						res = res + "\n # of sockets: " + strconv.Itoa(len(sockets))
