@@ -1,12 +1,13 @@
 var playerControl = {
-    videoId: "LGIcCaGvY2s",
-    isReady: false
+    videoId: "KQ6zr6kCPj8",
+    isReady: false,
+    cpu: null,
 };
 function onYouTubeIframeAPIReady() {
     new YT.Player('master-player', {
         height: '100%',
         width:  '100%',
-        videoId: 'LGIcCaGvY2s',
+        videoId: playerControl.videoId,
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -19,15 +20,21 @@ function onYouTubeIframeAPIReady() {
         }
     });
 }
-function onPlayerReady(e){playerControl.isReady = true;}
+function onPlayerReady(e){
+    playerControl.isReady = true;
+    playerControl.cpu = e;
+    console.log("Ready");
+}
 function onPlayerStateChange(e) {
     if(e.data==YT.PlayerState.ENDED){
-        e.target.playVideo();
+        console.log("ended");
     }else if(e.data==YT.PlayerState.PLAYING){
-
+      console.log("playing");
     }else  if(e.data==YT.PlayerState.BUFFERING){
-
+      console.log("buffering");
     }else if(e.data==YT.PlayerState.PAUSED){
-
+      console.log("paused");
+    }else if(e.data==YT.PlayerState.CUED){
+      console.log("cued");
     }
 }
