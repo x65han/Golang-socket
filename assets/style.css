@@ -1,0 +1,14 @@
+*{
+    transition:all .4s ease-out;
+}
+button{
+    border-radius:20px;
+    background-color:transparent;
+    color:crimson;
+    border:2px solid crimson;
+    outline:none;
+}
+button:hover{
+    background-color:crimson;
+    color:white;
+}
